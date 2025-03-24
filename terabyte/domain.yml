@@ -1,0 +1,70 @@
+version: "3.1"
+
+intents:
+  - order_coffee
+  - change_order
+  - order_drink
+  - modify_order
+  - cancel_order
+  - subtract_order
+  - check_order
+  - add_subtract_order
+  - select_size_order
+  - select_temperature_order
+  - additional_options_subtract_order
+  - additional_options_add_order
+  - coffee_recommend_order
+  - middle_check
+  - takeout_check
+  
+entities:
+  - drink_type
+  - quantity
+  - add
+  - subtract
+  - modify
+  - change
+  - size
+  - temperature
+  - additional_options
+  - subtract_options
+  - take
+  - drink_type
+  - subtract
+
+actions:
+  - utter_order_confirmation
+  - action_order_confirmation
+  - action_modify_order
+  - action_cancel_order
+  - utter_cancel_order
+  - action_subtract_from_order
+  - utter_add_order
+  - utter_subtract_order
+  - action_order_finish
+  - action_add_subtract
+  - action_coffee_recommendation
+  - action_select_coffee_size
+  - utter_utter_check
+  - action_select_coffee_temperature
+  - utter_ask_question
+  - action_add_additional_option
+  - action_remove_additional_option
+  - action_takeout
+  - utter_takeout
+
+responses:
+  utter_ask_question:
+  - text: "추가 및 변경하실 사항을 자세히 알려주시겠어요?"
+  utter_takeout:
+  - text: "매장에서 드시고 가실건가요?"
+  utter_utter_check:
+  - text: "주문을 인식하지 못하였습니다. 다시 주문해주세요."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+synonyms:
+  빼주세요:
+    - 빼 주세요

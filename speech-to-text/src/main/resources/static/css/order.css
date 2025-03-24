@@ -1,0 +1,277 @@
+/* order 주문페이지_1개 버전 */
+
+.txtbar_point {
+  color: #EB8500;
+}
+
+/* 주문 채팅 영역 */
+.menu_order {
+  width: 100%;
+  height: 20%;
+  background-color: #E4E4E4;
+  padding-top: 20px;
+  overflow-y: auto;
+  /* 스크롤바 숨김 */
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+/* 주문 채팅 스크롤바 숨김 */
+/* 크롬, 사파리, 오페라, 엣지 */
+.menu_order::-webkit-scrollbar {
+  display: none;
+}
+
+.talk {
+  width: 100%;
+  height: 80px;
+}
+
+/* 기기 talk */
+.ask_talk {
+  float: left;
+  margin-left: 30px;
+  padding-top: 5px;
+  position: relative;
+}
+
+.ask_talk > p {
+  background-color: #FFC700;
+  color: #000;
+  font-weight: bolder;
+  font-size: 26px;
+  padding: 15px 60px 15px 30px;
+  border-radius: 50px;
+}
+
+.ask_de {
+  width: 20px;
+  height: 20px;
+  background-color: #FFC700;
+  position: absolute;
+  left: 8%;
+  bottom: -8%;
+  transform: rotate(45deg);
+}
+
+/* 고객 talk */
+.people_talk {
+  float: right;
+  margin-right: 30px;
+  padding-top: 5px;
+  position: relative;
+}
+
+.people_talk > p {
+  background-color: #FFFFFF;
+  color: #000;
+  font-weight: bolder;
+  font-size: 26px;
+  padding: 15px 30px 15px 60px;
+  border-radius: 50px;
+}
+
+.people_de {
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  position: absolute;
+  right: 8%;
+  bottom: -8%;
+  transform: rotate(45deg);
+}
+
+/* 메뉴 리스트 영역 */
+.menu_list {
+  width: 100%;
+  height: 80%;
+  background-color: #F6F6F6;
+  overflow-y: auto;
+  padding: 10px;
+  /* 스크롤바 숨김 */
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+/* 메뉴 리스트 스크롤 숨김 */
+/* 크롬, 사파리, 오페라, 엣지 */
+.menu_list::-webkit-scrollbar {
+  display: none;
+}
+
+.menu_list > ul {
+  width: 98%;
+  margin: 10px auto;
+  background-color: #999;
+}
+
+.menu_list > ul > li {
+  width: 48%;
+  height: 220px;
+  background-color: #fff;
+  float: left;
+  border: 3px solid #F6F6F6;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin: 0.5%;
+}
+
+/* 메뉴 이미지 영역 */
+.menu_img {
+  width: 150px;
+  height: 190px;
+  float: left;
+  margin: 15px 0 0 15px;
+  background: #FFFAE8;
+}
+.menu_img > div {
+  width: 70px;
+  height: 30px;
+  text-align: center;
+}
+.menu_img > div > span {
+  font-size: 18px;
+  font-weight: bolder;
+  line-height: 30px;
+}
+.menu_img > img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 15px auto 0;
+}
+/* HOT일 경우 텍스트, 배경색 */
+.temp_hot {
+  color: #ed4b4b;
+  background-color: #FFDBDB;
+}
+/* ICE일 경우 텍스트, 배경색 */
+.temp_ice {
+  color: #0066FF;
+  background-color: #DBE9FF;
+}
+
+
+/* 메뉴 텍스트 영역 */
+.menu_txt {
+  width: 60%;
+  float: right;
+  margin: 15px 20px 0 0;
+}
+
+.menu_txt > div {
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+}
+
+/* 메뉴 & 가격 영역 */
+/* 메뉴 */
+.menu_txt > div:first-child > div:first-child {
+  width: 60%;
+  font-size: 23px;
+  float: left;
+  font-weight: bold;
+}
+
+/* 가격 */
+.menu_txt > div:first-child > div:last-child {
+  width: 35%;
+  font-size: 23px;
+  float: right;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* 옵션 영역 */
+.menu_txt > div:nth-child(2) {
+  height: 80px;
+  margin: 10px 0 10px 0;
+}
+
+.option_box {
+  background-color: #FFFAE8;
+  color: #EB8500;
+  float: left;
+  padding: 5px;
+  margin: 8px 15px 0 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option_box > div {
+  float: left;
+}
+
+.option_box > div:first-child {
+  margin-right: 10px;
+}
+
+.option_box > div:last-child {
+  margin-left: 5px;
+  color: #FFBF6D;
+}
+
+
+/* 버튼 영역 */
+.button_del {
+  width: 37px;
+  height: 37px;
+  background-color: #F6F6F6;
+  border: 1px solid #CECFD2;
+  border-radius: 5px;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+}
+
+.button_del > img {
+  width: 21px;
+  height: auto;
+  margin-top: 6px;
+}
+
+.button_num {
+  float: right;
+}
+
+.button_num > button {
+  width: 37px;
+  height: 37px;
+  border-radius: 5px;
+  border: 1px solid #CECFD2;
+  float: left;
+  font-size: 26px;
+  color: #656565;
+  cursor: pointer;
+}
+
+.button_num > button > span {
+  font-family: Pretendard;
+  font-weight: 500;
+}
+
+.button_num > div {
+  width: 60px;
+  float: left;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.button_num > div > span {
+  line-height: 37px;
+}
+
+/* 1개인 경우 수정되는 부분 */
+.menu_one > ul > li {
+  width: 98%; /* 전체 영역 */
+}
+
+.menu_one_txt {
+  width: 78%; /* 텍스트 영역 */
+}
+
+.menu_one_txt > div:last-child {
+  width: 25%;
+  float: right;
+}

@@ -1,0 +1,11 @@
+/* intro 페이지 */
+.intro_main {
+  background: url(../img/intro_bg.png) no-repeat;
+}
+
+.intro_main p {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 80px;
+  line-height: 1700px;
+}

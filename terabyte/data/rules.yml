@@ -1,0 +1,48 @@
+version: "3.1"
+
+rules:
+
+# - rule: Say goodbye anytime the user says goodbye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
+
+# - rule: Say 'I am a bot' anytime the user challenges
+#   steps:
+#   - intent: bot_challenge
+#   - action: utter_iamabot
+
+# - rule: when got a english word
+#   steps:
+#   - intent: eng_word
+#   - action: utter_eng_word
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_utter_check
+
+- rule: 주문 취소
+  steps:
+  - intent: cancel_order
+  - action: action_cancel_order
+
+- rule: 주문 다중처리
+  steps:
+  - intent: add_subtract_order
+  - action: action_add_subtract
+
+- rule: 사이즈 변경
+  steps:
+  - intent: select_size_order
+  - action: action_select_coffee_size
+
+- rule: 온도 변경
+  steps:
+  - intent: select_temperature_order
+  - action: action_select_coffee_temperature
+
+- rule: 테이크아웃 판별
+  steps:
+  - intent: takeout_check
+  - action: action_takeout

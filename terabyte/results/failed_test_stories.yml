@@ -1,0 +1,51 @@
+version: "3.1"
+stories:
+- story: happy path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: select_size_order: hello there[!](size)
+  - action: utter_greet  # predicted: utter_utter_check
+  - intent: mood_great  # predicted: order_coffee: amazing
+  - action: utter_happy  # predicted: utter_utter_check
+- story: happy path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: select_size_order: hello there[!](size)
+  - action: utter_greet  # predicted: utter_utter_check
+  - intent: mood_great  # predicted: order_coffee: amazing
+  - action: utter_happy  # predicted: utter_utter_check
+  - intent: goodbye  # predicted: order_coffee: [bye-](drink_type)[bye!](drink_type)
+  - action: utter_goodbye  # predicted: utter_utter_check
+- story: sad path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: select_size_order: hello
+  - action: utter_greet  # predicted: utter_utter_check
+  - intent: mood_unhappy  # predicted: nlu_fallback: not good
+  - action: utter_cheer_up  # predicted: utter_utter_check
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: affirm  # predicted: additional_options_add_order: yes
+  - action: utter_happy  # predicted: utter_utter_check
+- story: sad path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: select_size_order: hello
+  - action: utter_greet  # predicted: utter_utter_check
+  - intent: mood_unhappy  # predicted: nlu_fallback: not good
+  - action: utter_cheer_up  # predicted: utter_utter_check
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny  # predicted: select_size_order: not really
+  - action: utter_goodbye  # predicted: utter_utter_check
+- story: sad path 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet  # predicted: select_size_order: hi
+  - action: utter_greet  # predicted: utter_utter_check
+  - intent: mood_unhappy  # predicted: select_size_order: very terrible
+  - action: utter_cheer_up  # predicted: utter_utter_check
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny  # predicted: additional_options_add_order: [no](drink_type)
+  - action: utter_goodbye  # predicted: utter_utter_check
+- story: say goodbye (.\tests\test_stories.yml)
+  steps:
+  - intent: goodbye  # predicted: order_coffee: [bye-](drink_type)[bye!](drink_type)
+  - action: utter_goodbye  # predicted: utter_utter_check
+- story: bot challenge (.\tests\test_stories.yml)
+  steps:
+  - intent: bot_challenge  # predicted: nlu_fallback: are you a bot?
+  - action: utter_iamabot  # predicted: utter_utter_check

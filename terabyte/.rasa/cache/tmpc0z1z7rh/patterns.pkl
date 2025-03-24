@@ -1,0 +1,454 @@
+[
+  {
+    "name": "add",
+    "pattern": "(츠가|츠와|추와|타나)"
+  },
+  {
+    "name": "add",
+    "pattern": "\\b더\\b"
+  },
+  {
+    "name": "add",
+    "pattern": "넣어"
+  },
+  {
+    "name": "add",
+    "pattern": "더 주세요"
+  },
+  {
+    "name": "add",
+    "pattern": "더 주시고"
+  },
+  {
+    "name": "add",
+    "pattern": "얹어"
+  },
+  {
+    "name": "add",
+    "pattern": "올려"
+  },
+  {
+    "name": "add",
+    "pattern": "추가"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "(샷|샤타나|4\\s*추가)"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "가라멜\\s*시럽"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "바닐라\\s*시럽"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "바닐라\\s*실업"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "비비\\s*크림"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "사추(?=와|가)"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "샤츠(?=와|가)"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "셔츠(?=와|가)"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "실룩실룩"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "카라멜\\s*시럽"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "카라멜\\s*시로"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "카라멜\\s*실업"
+  },
+  {
+    "name": "additional_options",
+    "pattern": "휘핑\\s*크림"
+  },
+  {
+    "name": "change",
+    "pattern": "는"
+  },
+  {
+    "name": "change",
+    "pattern": "대신"
+  },
+  {
+    "name": "change",
+    "pattern": "말고"
+  },
+  {
+    "name": "change",
+    "pattern": "은"
+  },
+  {
+    "name": "change",
+    "pattern": "을"
+  },
+  {
+    "name": "drink_type",
+    "pattern": "(레모네이드|카페라뗴|카페라테|망고, 스무디|망고,스무디|딸기, 스무디|딸기,스무디|복숭아, 아이스티|복숭아,아이스티|카라멜\\s*마키아또|아보카도|키즈스|\\b초콜릿\\b|초콜릿\\s*대|바닐라\\s*떼|카라멜\\s*막혔더|복숭아\\s*ost|말\\s*자라\\s*때|바닐라\\s*레떼|아포가토|복숭아\\s*아이스크림|아가|망고스뮤비|응아)"
+  },
+  {
+    "name": "drink_type",
+    "pattern": "(망고스\\s*머리|허벅지|다기\\s*스무디|쿠킹크림|쿠킹그림|쿠앤크|카페북한|쁘허|tv\\s*스투스|말\\s*잘\\s*할\\s*때|뚜아|허버트|tv\\s*쥬스|아프리카|마\\s*찰할때|말\\s*찾았대|라벨\\s*마끼아또|카메라\\s*맡기어\\s*도|복숭아\\s*St|복숭아\\s*에스티|복숭아\\s*하이스틸|토마토\\s*소스|에스페로|호텔|말\\s*잘했다|카프치노)"
+  },
+  {
+    "name": "drink_type",
+    "pattern": "(에스프레소|아메리카노|카푸치노|카페\\s*라떼|바닐라\\s*라떼|카라멜\\s*마끼아또|카페\\s*모카|아포카토|토마토\\s*주스|키위\\s*주스|망고\\s*스무디|딸기\\s*스무디|쿠키\\s*앤\\s*크림|레몬\\s*에이드|복숭아\\s*아이스티|허브티|말차\\s*라떼|초콜릿\\s*라떼|뜨\\s*아|(?<!뜨)아\\s*아|\\b아\\b|\\b뜨아아\\b|\\b또\\b)"
+  },
+  {
+    "name": "drink_type",
+    "pattern": "(카라멜\\s*마끼야또|(?<!카페)라떼|(?<!카페)라뗴|(?<!카페)라때)"
+  },
+  {
+    "name": "modify",
+    "pattern": "바꿀게요"
+  },
+  {
+    "name": "modify",
+    "pattern": "바꿀래요"
+  },
+  {
+    "name": "modify",
+    "pattern": "바꿔"
+  },
+  {
+    "name": "modify",
+    "pattern": "바꿔주세요"
+  },
+  {
+    "name": "modify",
+    "pattern": "바꿔주시고"
+  },
+  {
+    "name": "modify",
+    "pattern": "바꿔줘"
+  },
+  {
+    "name": "modify",
+    "pattern": "변경"
+  },
+  {
+    "name": "modify",
+    "pattern": "변경하고"
+  },
+  {
+    "name": "modify",
+    "pattern": "변경할래요"
+  },
+  {
+    "name": "modify",
+    "pattern": "변경해\\s*주세요"
+  },
+  {
+    "name": "quantity",
+    "pattern": "(한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|1|2|3|4|5|6|7|8|9|10)(?=\\s*산)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "(한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|1|2|3|4|5|6|7|8|9|10)(?=\\s*잔)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "(한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|1|2|3|4|5|6|7|8|9|10)(?=\\s*장)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "(한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|1|2|3|4|5|6|7|8|9|10)(?=\\s*전)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "(한|환)(?=\\s*자)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "das(?=\\s*잔)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "내(?=\\s*산)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "내(?=\\s*장)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "내(?=\\s*전)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "대(?=\\s*전)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "도(?=\\s*장)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "도(?=\\s*전)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "두(?=\\s*자)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "라(?=\\s*잔)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "세(?=\\s*계)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "세(?=\\s*상)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "세(?=\\s*자)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "안(?=\\s*장)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "안(?=\\s*전)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "앉(?=\\s*아)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "완(?=\\s*전)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "재(?=\\s*산)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "투(?=\\s*자)"
+  },
+  {
+    "name": "quantity",
+    "pattern": "하나"
+  },
+  {
+    "name": "quantity",
+    "pattern": "한(?=\\s*단)"
+  },
+  {
+    "name": "size",
+    "pattern": "(?<!엑스)라지"
+  },
+  {
+    "name": "size",
+    "pattern": "(?<!엑스)라지로"
+  },
+  {
+    "name": "size",
+    "pattern": "(?<!엑스)라지사이즈로"
+  },
+  {
+    "name": "size",
+    "pattern": "(\\b제1 큰\\b|\\b가장 큰\\b|\\b제1 크게\\b|\\b맥시멈\\b|\\b(?<!제1 )큰\\b|\\b(?<!제1 )크게\\b|\\b(?<!가장 )큰\\b|\\b(?<!가장 )크게\\b|\\b보통\\b|\\b중간\\b|\\b기본\\b)"
+  },
+  {
+    "name": "size",
+    "pattern": "\\b토\\b"
+  },
+  {
+    "name": "size",
+    "pattern": "라디"
+  },
+  {
+    "name": "size",
+    "pattern": "라디오"
+  },
+  {
+    "name": "size",
+    "pattern": "라의"
+  },
+  {
+    "name": "size",
+    "pattern": "미디움"
+  },
+  {
+    "name": "size",
+    "pattern": "미디움사이즈"
+  },
+  {
+    "name": "size",
+    "pattern": "미디움사이즈로"
+  },
+  {
+    "name": "size",
+    "pattern": "미디움으로"
+  },
+  {
+    "name": "size",
+    "pattern": "비디오"
+  },
+  {
+    "name": "size",
+    "pattern": "엑스\\s*라이즈"
+  },
+  {
+    "name": "size",
+    "pattern": "엑스\\s*라지"
+  },
+  {
+    "name": "size",
+    "pattern": "엑스\\s*라지로"
+  },
+  {
+    "name": "size",
+    "pattern": "엑스\\s*라지사이즈"
+  },
+  {
+    "name": "size",
+    "pattern": "엑스\\s*라지사이즈로"
+  },
+  {
+    "name": "size",
+    "pattern": "톨"
+  },
+  {
+    "name": "subtract",
+    "pattern": "빼"
+  },
+  {
+    "name": "subtract",
+    "pattern": "뺄게요"
+  },
+  {
+    "name": "subtract",
+    "pattern": "취소"
+  },
+  {
+    "name": "subtract",
+    "pattern": "취소\\s*해주세요"
+  },
+  {
+    "name": "take",
+    "pattern": "가져"
+  },
+  {
+    "name": "take",
+    "pattern": "들고"
+  },
+  {
+    "name": "take",
+    "pattern": "마시"
+  },
+  {
+    "name": "take",
+    "pattern": "마실"
+  },
+  {
+    "name": "take",
+    "pattern": "매장"
+  },
+  {
+    "name": "take",
+    "pattern": "먹고"
+  },
+  {
+    "name": "take",
+    "pattern": "먹을"
+  },
+  {
+    "name": "take",
+    "pattern": "여기"
+  },
+  {
+    "name": "take",
+    "pattern": "이곳"
+  },
+  {
+    "name": "take",
+    "pattern": "테이크아웃"
+  },
+  {
+    "name": "take",
+    "pattern": "포장"
+  },
+  {
+    "name": "temperature",
+    "pattern": "hot"
+  },
+  {
+    "name": "temperature",
+    "pattern": "따듯한"
+  },
+  {
+    "name": "temperature",
+    "pattern": "따뜻하게"
+  },
+  {
+    "name": "temperature",
+    "pattern": "따뜻한"
+  },
+  {
+    "name": "temperature",
+    "pattern": "뜨거운"
+  },
+  {
+    "name": "temperature",
+    "pattern": "뜨겁게"
+  },
+  {
+    "name": "temperature",
+    "pattern": "뜨뜻한"
+  },
+  {
+    "name": "temperature",
+    "pattern": "시원하게"
+  },
+  {
+    "name": "temperature",
+    "pattern": "시원한"
+  },
+  {
+    "name": "temperature",
+    "pattern": "아이스(?!티)"
+  },
+  {
+    "name": "temperature",
+    "pattern": "차가운"
+  },
+  {
+    "name": "temperature",
+    "pattern": "차갑게"
+  },
+  {
+    "name": "temperature",
+    "pattern": "하수"
+  },
+  {
+    "name": "temperature",
+    "pattern": "핫"
+  }
+]

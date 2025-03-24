@@ -1,0 +1,328 @@
+version: "3.1"
+nlu:
+- intent: check_order
+  examples: |
+    - 아니요 없습니다.
+    - 아니요 더 필요한 것은 없어요
+- intent: coffee_recommend_order
+  examples: |
+    - 다른 사람들이 가장 많이 시키는 커피가 뭔가요?
+    - 추천해 주실만한 커피가 있을까요?
+- intent: cancel_order
+  examples: |
+    - 주문을 모한 취소해주세요
+    - 주문 취소해주시겠어요?
+    - 주문 취소할게요
+    - 이 주문을 취소할게요
+- intent: select_temperature_order
+  examples: |
+    - [핫](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔주시고 [핫](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [아이스](temperature)로 바꿔주세요
+    - [핫](temperature) [아메리카노](drink_type) [한](quantity)잔이랑 [핫](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [아이스](temperature)로 바꿔주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [핫](temperature)으로 바꿔주세요
+    - [핫](temperature) [아메리카노](drink_type) [한](quantity)잔, [핫](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [아이스](temperature)로 바꿔주세요
+    - [핫](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔은 [아이스](temperature)로 바꿔주세요
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [핫](temperature)으로 바꿔주세요
+    - [핫](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔 [핫](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [아이스](temperature)로 바꿔주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔은 [핫](temperature)으(로) 주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔도 [핫](temperature)으(로) 바꿔주세요
+    - [핫](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔이랑 [핫](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [아이스](temperature)로 바꿔주세요
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [핫](temperature)으로 바꿔주세요
+    - [핫](temperature) [아메리카노](drink_type) [미디움](size) [1](quantity)잔 [핫](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [아이스](temperature)로 바꿔주세요
+    - [아메리카노](drink_type) [한](quantity)잔은 [뜨겁게](temperature) 바꿔주세요
+- intent: add_subtract_order
+  examples: |
+    - [아이스](temperature) [카푸치노](drink_type) [1](quantity)잔은 [빼](subtract)주시고 [아이스](temperature) [에스프레소](drink_type) [1](quantity)잔은 [추가](add)해주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔은 [추가해주시고](add) [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [빼](subtract)주세요
+    - [뜨아](drink_type) [한](quantity)잔은 [추가해주시고](add) [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔은 [빼](subtract)주세요
+    - [카페라떼](drink_type) [한](quantity) 잔 [빼](subtract)주시고, 카라멜마끼아또 [한](quantity) 잔 [추가](add)해주세요
+    - 카페라떼 한 잔은 [빼](subtract)주시고 카라멜마끼아또 한 잔 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔은 [빼](subtract)주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [추가](add)해주세요
+    - [아이스](temperature) [에스프레소](drink_type) [라지](size) [한](quantity)잔은 [추가해주시고](add) [아이스](temperature) [바닐라라떼](drink_type) [라지](size) [한](quantity)잔은 [빼](subtract)주세요
+    - [아이스](temperature) [바닐라라떼](drink_type) [한](quantity)잔은 [빼](subtract)주시고 [아이스](temperature) [카라멜마끼아또](drink_type) [한](quantity)잔은 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔은 [빼](subtract)주시고 [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔은 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [1](quantity)잔은 [추가해주시고](add) [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔은 [빼](subtract)주세요
+    - [아이스](temperature) [바닐라라떼](drink_type) [1](quantity)잔은 [추가해주시고](add) [아이스](temperature) [카라멜마끼아또](drink_type) [1](quantity)잔은 [빼](subtract)주세요
+    - [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔은 [추가해주시고](add) [아이스](temperature) [카푸치노](drink_type) [1](quantity)잔은 [빼](subtract)주세요
+    - [뜨아](drink_type) [1](quantity)잔은 [추가해주시고](add) [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔은 [빼](subtract)주세요
+    - [아이스](temperature) [바닐라라떼](drink_type) [라지](size) [한](quantity)잔은 [빼](subtract)주시고 [아이스](temperature) [카라멜마끼아또](drink_type) [라지](size) [한](quantity)잔은 [추가](add)해주세요
+- intent: modify_order
+  examples: |
+    - 아메리카노 한 잔 [말고](change) 바닐라라떼 한 잔으로 [바꿔](modify)줘
+    - 아메리카노 한 잔이랑 카페라떼 한 잔으로 [바꿔](modify)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔으로 [바꿔주세요](modify)
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔 [말고](change) [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔으로 [바꿔주세요](modify)
+    - 카페모카 한 잔, 카페라떼 한 잔으로 [바꿔](modify)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔으로 [바꿔주세요](modify)
+    - [아아](drink_type) [라지](size) [한](quantity)잔 [대신](change) [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔으로 [바꿔주세요](modify)
+    - [아아](drink_type) [미디움](size) [한](quantity)잔으로 [바꿔주세요](modify)
+    - 카페라떼를 한 잔으로 [바꿔](modify)주세요
+    - [아아](drink_type) [미디움](size) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [미디움](size) [한](quantity)잔으로 [바꿔주세요](modify)
+    - [뜨아](drink_type) [엑스라지](size) [한](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔으로 [바꿔주세요](modify)
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔으로 [바꿔주세요](modify)
+    - [아메리카노](drink_type)는 한 잔으로 [변경](modify)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔으로 [바꿔주세요](modify)
+- intent: select_size_order
+  examples: |
+    - [아아](drink_type) [라지](size) [한](quantity)잔은 [엑스라지](size)로 [바꿔주세요](modify)
+    - [아아](drink_type) [미디움](size) [한](quantity)잔은 [라지](size)로 [바꿔주세요](modify)
+    - [아메리카노](drink_type) [한](quantity)잔이랑 [카페라떼](drink_type) [한](quantity)잔은 [라지](size)로 [바꿔주세요](modify)
+    - [아메리카노](drink_type) [1](quantity)잔 [카페라떼](drink_type) [1](quantity)잔은 [라지](size)로 [바꿔주세요](modify)
+    - [아메리카노](drink_type) [한](quantity)잔, [카페라떼](drink_type) [한](quantity)잔은 [엑스라지](size)로 [바꿔주세요](modify)
+    - [핫](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔은 [엑스라지](size)로 [바꿔주세요](modify)
+    - [아아](drink_type) [미디움](size) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [라지](size)로 [바꿔주세요](modify)
+    - [아메리카노](drink_type) [한](quantity)잔주시고 [카페라떼](drink_type) [한](quantity)잔은 [라지](size)로 [바꿔주세요](modify)
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔은 [라지](size)로 [바꿔주세요](modify)
+    - [아메리카노](drink_type) [한](quantity)잔이랑 [카페라떼](drink_type) [한](quantity)잔은 [엑스라지](size)로 [바꿔주세요](modify)
+    - [카페모카](drink_type) [1](quantity)잔은 [라지](size)으로 바꿔주세요
+    - [카라멜마끼아또](drink_type) [1](quantity)잔은 [라지](size)으로 바꿔주세요
+    - [아아](drink_type) [미디움](size) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [라지](size)로 [바꿔주세요](modify)
+    - [복숭아핫티](drink_type) [1](quantity)잔은 [라지](size)으로 바꿔주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔은 [엑스라지](size)로 [바꿔주세요](modify)
+    - [쿠키앤크림](drink_type) [한](quantity)잔은 [라지](size)으로 바꿔주세요
+- intent: order_coffee
+  examples: |
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔 [카페라떼](drink_type) [라지](size) [한](quantity)잔 주세요
+    - [카페라떼](drink_type) [두](quantity)잔 주세요
+    - [아메리카노](drink_type) [엑스라지](size) [1](quantity)잔이랑 [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 주세요
+    - [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔주시고 [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔 주세요
+    - [뜨아](drink_type) [엑스라지](size) [1](quantity)잔, [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [1](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 주세요
+    - [아메리카노](drink_type) [1](quantity)잔 주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔 주세요
+    - [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔이랑 [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [샷](additional_options) 추가해 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔 주시고 [샷](additional_options)추가해주세요
+    - 아메리카노 세 잔 주세요
+    - [뜨아](drink_type) [1](quantity)잔, [카페라떼](drink_type) [한](quantity)잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 주세요
+    - [아아](drink_type) [한](quantity)잔이랑 [카페라떼](drink_type) [한](quantity)잔 주세요
+    - [아메리카노](drink_type) [1](quantity)잔, [카페라떼](drink_type) [1](quantity)잔 주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔이랑 [카페라떼](drink_type) [라지](size) [한](quantity)잔 주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔에 [샷](additional_options) 추가해 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 주세요
+    - [아메리카노](drink_type) 한 잔 주시고 [카페라떼](drink_type) 두 잔 [초콜릿라떼](drink_type) 한잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔에 [샷](additional_options) 추가해 주세요
+    - [아메리카노](drink_type) [엑스라지](size) [1](quantity)잔주시고 [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔에 [샷](additional_options) 추가해 주세요
+    - [아아](drink_type) [라지](size) [한](quantity)잔, [카페라떼](drink_type) [라지](size) [한](quantity)잔 주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔주시고 [카페라떼](drink_type) [라지](size) [한](quantity)잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [샷](additional_options) 추가해 주세요
+    - [아아](drink_type) [엑스라지](size) [1](quantity)잔, [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔 주세요
+    - [아메리카노](drink_type) [한](quantity)잔 주시고 [휘핑 크림](additional_options)추가해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔 주세요
+    - [아아](drink_type) [한](quantity)잔주시고 [카페라떼](drink_type) [한](quantity)잔 주세요
+    - [아아](drink_type) [한](quantity)잔 주세요
+    - [아메리카노](drink_type) [1](quantity)잔이랑 [카페라떼](drink_type) [1](quantity)잔 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔에 [샷](additional_options) 추가해 주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔 주세요
+    - [아메리카노](drink_type) [1](quantity)잔주시고 [카페라떼](drink_type) [1](quantity)잔 주세요
+- intent: additional_options_order
+  examples: |
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔 [샷](additional_options) 추가한거에서 [카라멜 시럽](additional_options) 추가해주세요
+    - [아아](drink_type) [라지](size) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [휘핑 크림](additional_options) 추가해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔에 [샷](additional_options) 추가해주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거에서 [샷](additional_options) 추가해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [샷](additional_options) 추가해주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [휘핑 크림](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔에 [휘핑 크림](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔, [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [샷](additional_options) 추가해주세요
+    - [핫](temperature) [아메리카노](drink_type) [1](quantity)잔주시고 [핫](temperature) [카페라떼](drink_type) [1](quantity)잔은 [바닐라 시럽](additional_options) 추가해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔에 [휘핑 크림](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔이랑 [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [바닐라 시럽](additional_options) 추가해주세요
+    - [아아](drink_type)에 [샷](additional_options) 추가한거 [샷](additional_options) 빼주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거에서 [카라멜 시럽](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔주시고 [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [바닐라 시럽](additional_options) 추가해주세요
+    - [아아](drink_type)에 [휘핑 크림](additional_options) 추가한거 [휘핑 크림](additional_options) 빼주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거에서 [바닐라 시럽](additional_options) 추가해주세요
+    - [핫](temperature) [아메리카노](drink_type) [1](quantity)잔 [핫](temperature) [카페라떼](drink_type) [1](quantity)잔은 [샷](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔 [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [바닐라 시럽](additional_options) 추가해주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔 [샷](additional_options) 추가한거에서 [휘핑 크림](additional_options) 추가해주세요
+    - [핫](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔 [핫](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [샷](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔은 [샷](additional_options) 추가해주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [카라멜 시럽](additional_options)변경해주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔 [샷](additional_options) 추가한거에서 [샷](additional_options) 빼주세요
+    - [아아](drink_type) [라지](size) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [휘핑 크림](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔이랑 [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [카라멜 시럽](additional_options) 추가해주세요
+    - [아아](drink_type) [라지](size) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [바닐라 시럽](additional_options)변경해주세요
+    - [아아](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거에 [바닐라 시럽](additional_options) 추가해주세요
+    - [뜨아](drink_type)에 [카라멜 시럽](additional_options) 추가한거에서 [카라멜 시럽](additional_options) 빼주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [바닐라 시럽](additional_options)변경해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [바닐라 시럽](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔은 [카라멜 시럽](additional_options) 추가해주세요
+    - [핫](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔주시고 [핫](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [샷](additional_options) 추가해주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [카라멜 시럽](additional_options)변경해주세요
+    - [뜨아](drink_type)에 [휘핑 크림](additional_options) 추가한거에서 [휘핑 크림](additional_options) 빼주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔에 [샷](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔이랑 [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [바닐라 시럽](additional_options) 추가해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [카라멜 시럽](additional_options) 추가해주세요
+    - [아아](drink_type) [라지](size) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [샷](additional_options)변경해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [바닐라 시럽](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔 [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [카라멜 시럽](additional_options) 추가해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔에 [샷](additional_options) 추가해주세요
+    - [뜨아](drink_type) [라지](size) [한](quantity)잔 [카라멜 시럽](additional_options) 추가한거에서 [카라멜 시럽](additional_options) 빼주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔 [카페라떼](drink_type) [라지](size) [1](quantity)잔은 [휘핑 크림](additional_options) 추가해주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔 [카페라떼](drink_type) [라지](size) [한](quantity)잔에 [카라멜 시럽](additional_options) 추가해주세요
+- intent: subtract_order
+  examples: |
+    - [뜨아](drink_type) [1](quantity)잔 [휘핑 크림](additional_options)추가한거 [빼](subtract)주세요
+    - 카페라떼 한 잔 [빼](subtract)주세요
+    - [아아](drink_type) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [바닐라 시럽](additional_options)추가한거 [빼](subtract)주세요
+    - 아메리카노 한 잔 [빼](subtract)주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔, [카페라떼](drink_type) [라지](size) [1](quantity)잔 [빼](subtract)
+    - [아메리카노](drink_type) [1](quantity)잔이랑 [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔 [바닐라 시럽](additional_options)추가한거 [빼](subtract)주세요
+    - [뜨아](drink_type) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔이랑 [카페라떼](drink_type) [라지](size) [한](quantity)잔 [빼](subtract)주세요
+    - [아메리카노](drink_type) [1](quantity)잔 [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아메리카노](drink_type) [1](quantity)잔 [빼주시고](subtract) [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아아](drink_type) [엑스라지](size) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 [카라멜 시럽](additional_options)추가한거 [빼](subtract)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔 [빼](subtract)
+    - [뜨아](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [1](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)
+    - [뜨아](drink_type) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [휘핑 크림](additional_options)추가한거 [빼](subtract)주세요
+    - 카페라떼 한 잔은 [빼](subtract)주세요
+    - [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔 [샷](additional_options) 추가한거 [빼](subtract)주세요
+    - [아아](drink_type) [1](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아메리카노](drink_type) [한](quantity)잔 [카라멜 시럽](additional_options)추가한거 [빼](subtract)주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔 [빼주시고](subtract) [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거 [빼](subtract)주세요
+    - [아아](drink_type) [엑스라지](size) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 [빼](subtract)주세요
+    - [아아](drink_type) [라지](size) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [휘핑 크림](additional_options)추가한거 [빼](subtract)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [빼](subtract)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔 [빼](subtract)주세요
+    - [뜨아](drink_type) [엑스라지](size) [1](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 [빼](subtract)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [라지](size) [한](quantity)잔 [빼](subtract)
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [빼](subtract)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [한](quantity)잔 [빼](subtract)
+    - [아메리카노](drink_type) [한](quantity)잔 [빼](subtract)
+    - [아메리카노](drink_type) [1](quantity)잔 [빼](subtract)
+    - [아이스](temperature) [아메리카노](drink_type) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)
+    - [아아](drink_type) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아아](drink_type) [1](quantity)잔 [빼주시고](subtract) [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [바닐라 시럽](additional_options)추가한거 [빼](subtract)주세요
+    - [뜨아](drink_type) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [카라멜 시럽](additional_options)추가한거 [빼](subtract)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [1](quantity)잔 [빼주시고](subtract) [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거 [빼](subtract)주세요
+    - [아아](drink_type) [라지](size) [1](quantity)잔 [휘핑 크림](additional_options)추가한거 [빼주시고](subtract) [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [휘핑 크림 추가](additional_options)한것도 [빼](subtract)주세요
+    - [아아](drink_type) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔 [바닐라 시럽](additional_options)추가한거 [빼](subtract)주세요
+    - [아아](drink_type) [1](quantity)잔 [빼](subtract)주세요
+    - [아메리카노](drink_type) [한](quantity)잔 [빼](subtract)주세요
+    - 카라멜마끼아또 한 잔 [빼](subtract)줘
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔 [빼](subtract)주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔 [빼주시고](subtract) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [빼](subtract)
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔 [빼](subtract)주세요
+    - [뜨아](drink_type) [1](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [카라멜 시럽](additional_options)추가한거 [빼](subtract)주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔 [카페라떼](drink_type) [라지](size) [1](quantity)잔 [빼](subtract)
+- intent: add_order
+  examples: |
+    - [핫](temperature)[아메리카노](drink_type) [한](quantity)잔 더 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [추가](add)해주세요
+    - [아메리카노](drink_type) [1](quantity) 잔, [카페라떼](drink_type) [2](quantity) 잔 [추가](add)해주세요
+    - [아메리카노](drink_type) [한](quantity)잔 [추가](add)해주시고 [바닐라 시럽](additional_options)추가해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔 더 [추가](add)해주세요
+    - [아메리카노](drink_type) [한](quantity)잔이랑 [카페라떼](drink_type) [한](quantity)잔 더 [추가](add)해주세요
+    - [아아](drink_type) [1](quantity)잔 [휘핑 크림](additional_options)추가한거 [추가](add)해주세요
+    - [뜨아](drink_type) [엑스라지](size) [1](quantity)잔 더 [추가](add)해주세요
+    - [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔 [추가](add)해주시고 [바닐라 시럽](additional_options)추가해주세요
+    - [아메리카노](drink_type) [한](quantity)잔주시고 [카페라떼](drink_type) [한](quantity)잔 더 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [라지](size) [1](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 더 [추가](add)해주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거 [추가](add)해주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 더 [추가](add)해주세요
+    - [뜨아](drink_type) [엑스라지](size) [1](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 더 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔 더 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔 더 [추가](add)해주세요
+    - [아아](drink_type) [엑스라지](size) [1](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 [바닐라 시럽](additional_options)추가한거 [추가](add)해주세요
+    - [아아](drink_type) [1](quantity)잔 더 [추가](add)해주세요
+    - [핫](temperature) [아메리카노](drink_type) [1](quantity) 잔 [추가](add)해주세요
+    - [아메리카노](drink_type) [라지](size) [1](quantity)잔 더 [추가](add)해주세요
+    - [뜨아](drink_type) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [카라멜 시럽](additional_options)추가한거 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [추가](add)해주세요
+    - [뜨아](drink_type) [1](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [휘핑 크림](additional_options)추가한거 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [미디움](size) [1](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [추가](add)해주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔이랑 [카페라떼](drink_type) [라지](size) [한](quantity)잔 더 [추가](add)해주세요
+    - [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔이랑 [카페라떼](drink_type) [엑스라지](size) [한](quantity)잔 [추가](add)해주세요
+    - [핫](temperature) [카페라떼](drink_type) [한](quantity) 잔 [추가](add)해주세요
+    - [아아](drink_type) [엑스라지](size) [1](quantity)잔 더 [추가](add)해주세요
+    - [아메리카노](drink_type) [엑스라지](size) [1](quantity)잔주시고 [카페라떼](drink_type) [엑스라지](size) [1](quantity)잔 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [엑스라지](size) [한](quantity)잔 [추가](add)해주시고 [휘핑 크림](additional_options)추가해주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔, [카페라떼](drink_type) [라지](size) [한](quantity)잔 더 [추가](add)해주세요
+    - [아메리카노](drink_type) [한](quantity)잔, [카페라떼](drink_type) [한](quantity)잔 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [1](quantity)잔 [추가](add)해주세요
+    - [아아](drink_type) [라지](size) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [추가](add)해주세요
+    - [뜨아](drink_type) [라지](size) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거 [추가](add)해주세요
+    - [카페모카](drink_type) [한](quantity) 잔 더 [추가](add)해주세요
+    - [아메리카노](drink_type) [한](quantity)잔주시고 [카페라떼](drink_type) [한](quantity)잔 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [한](quantity)잔 [아이스](temperature) [카페라떼](drink_type) [한](quantity)잔 [추가](add)해주세요
+    - [아이스](temperature) [복숭아핫티](drink_type) [2](quantity) 잔 더 [추가](add)해주세요
+    - [아이스](temperature) [아메리카노](drink_type) [1](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [추가](add)해주세요
+    - [뜨아](drink_type) [1](quantity)잔이랑 [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 더 [추가](add)해주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔주시고 [카페라떼](drink_type) [라지](size) [한](quantity)잔 더 [추가](add)해주세요
+    - [핫](temperature) [카라멜마끼아또](drink_type) [1](quantity) 잔 더 [추가](add)해주세요
+    - [아메리카노](drink_type) [라지](size) [한](quantity)잔 [카페라떼](drink_type) [라지](size) [한](quantity)잔 더 [추가](add)해주세요
+    - [아아](drink_type) [라지](size) [1](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 더 [추가](add)해주세요
+    - [아아](drink_type) [라지](size) [1](quantity)잔주시고 [아이스](temperature) [카페라떼](drink_type) [라지](size) [1](quantity)잔 [샷](additional_options) 추가한거 [추가](add)해주세요
+    - [아메리카노](drink_type) [한](quantity) 잔만 [추가](add)해주세요
+    - [아아](drink_type) [1](quantity)잔, [아이스](temperature) [카페라떼](drink_type) [1](quantity)잔 [카라멜 시럽](additional_options)추가한거 [추가](add)해주세요
+- synonym: 바꿔
+  examples: |
+    - 변경
+    - 전환
+- regex: add
+  examples: |
+    - \b더\b
+    - 더 주세요
+    - 더 주시고
+    - 추가
+- regex: additional_options
+  examples: |
+    - 바닐라 시럽
+    - 샷
+    - 카라멜 시럽
+    - 휘핑 크림
+- regex: change
+  examples: |
+    - 대신
+    - 말고
+    - 을
+- regex: drink_type
+  examples: |
+    - (에스프레소|아메리카노|카푸치노|카페\s*라떼|바닐라\s*라떼|카라멜\s*마끼아또|카페\s*모카|아포카토|토마토\s*주스|키위\s*주스|망고\s*스무디|딸기\s*스무디|쿠키앤크림|레몬\s*에이드|복숭아\s*아이스티|허브티|말차\s*라떼|초콜릿\s*라떼|뜨아|아아)
+- regex: modify
+  examples: |
+    - 바꿀게요
+    - 바꿀래요
+    - 바꿔
+    - 바꿔주세요
+    - 바꿔주시고
+    - 바꿔줘
+    - 변경
+    - 변경하고
+    - 변경할래요
+    - 변경해주세요
+- regex: quantity
+  examples: |
+    - (한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|1|2|3|4|5|6|7|8|9|10)(?= 잔|잔)
+- regex: size
+  examples: |
+    - \b(?<!엑스)라지\b
+    - \b(?<!엑스)라지로\b
+    - 미디움
+    - 엑스라지
+- regex: subtract
+  examples: |
+    - 빼
+    - 뺄게요
+- regex: temperature
+  examples: |
+    - 따뜻하게
+    - 따뜻한
+    - 뜨거운
+    - 뜨겁게
+    - 시원하게
+    - 시원한
+    - 아이스
+    - 차가운
+    - 차갑게
+    - 핫

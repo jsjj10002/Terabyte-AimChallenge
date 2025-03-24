@@ -1,0 +1,41 @@
+language: ko
+pipeline:
+- name: SpacyNLP
+  model: ko_core_news_md
+- name: SpacyTokenizer
+- name: LanguageModelFeaturizer
+  model: "bert"
+  model_weights: "rasa/LaBSE"
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: "char_wb"
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  epochs: 300
+  constrain_similarities: True
+  use_entity_roles: true
+  use_entity_groups: true
+- name: EntitySynonymMapper
+- name: RegexEntityExtractor
+- name: "FallbackClassifier"
+  threshold: 0.8  # 신뢰도 임계값
+  ambiguity_threshold: 0.000001  # 모호성 임계값
+assistant_id: 20240513-184756-soft-mesh
+policies:
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 500
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 500
+  - name: RulePolicy
+    core_fallback_threshold: 0.4
+    core_fallback_action_name: "utter_utter_check"
+    enable_fallback_prediction: True

@@ -1,0 +1,51 @@
+server:
+  port: 8091
+
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+#  ssl:
+#   key-alias: springbootssl
+#   key-store: keystore.p12
+#   key-store-password: 123456789
+#   key-store-type: PKCS12
+spring:
+  mvc:   
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp     
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 1MB # 파일이 메모리에 기록되는 임계값 (default: 0B)
+      max-file-size: 50MB # 개별 파일의 최대 사이즈 (default: 1MB)
+      max-request-size: 50MB # 요청의 최대 사이즈 (default: 10MB)
+  devtools:
+    livereload:
+      enabled: true
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://121.182.60.35:3306/chatbot?serverTimezone=Asia/Seoul
+#    username: root
+#    password: dreamidea1!
+#    url: jdbc:mysql://43.201.212.42:3306/chatbot?serverTimezone=Asia/Seoul
+#    username: dream
+#    password: dreamidea1!
+#  jpa:
+#    open-in-view: true
+#    hibernate:
+#      ddl-auto: update
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#      use-new-id-generator-mappings: false
+    #show-sql: true
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  task:
+    scheduling:
+      pool:
+        size: 8 

@@ -1,0 +1,50 @@
+/* 결제 안내 */
+
+.pay_info {
+  width: 80%;
+  height: 50%;
+  margin: 350px auto 0;
+  text-align: center;
+}
+
+.pay_info > div:nth-child(2) {
+  width: 75%;
+  height: 170px;
+  background-color: #888;
+  margin: 150px auto;
+  border-radius: 20px;
+}
+
+.pay_info > div:nth-child(2) > img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.pay_txt_org {
+  font-size: 32px;
+  font-weight: bolder;
+  color: #FF8D1C;
+}
+
+.pay_txt {
+  font-size: 40px;
+  font-weight: bolder;
+  margin: 0 0 20px 0;
+}
+
+.wait {
+  width: 120px;
+  height: 30px;
+  margin: 50px auto 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wait > div {
+  width: 15px;
+  height: 15px;
+  background: #000;
+  float: left;
+  border-radius: 30px;
+}

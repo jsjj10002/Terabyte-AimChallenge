@@ -1,0 +1,51 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: Pretendard;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  height: 5%;
+  background-color: #FFC700;
+  text-align: center;
+}
+
+header > p {
+  font-size: 50px;
+  font-weight: bolder;
+  line-height: 90px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button span {
+  font-family: Pretendard;
+}

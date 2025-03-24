@@ -1,0 +1,615 @@
+version: "3.1"
+
+# 내가 추가한거(아이스를 위해)
+stories:
+- story: 복숭아 아이스티 주문
+  steps:
+  - intent: order_coffee
+  - slot_was_set:
+    - drink_type: 복숭아 아이스티  # 음료 이름이 슬롯에 설정
+  - action: action_order_confirmation  # 주문 확인 액션 실행
+
+
+stories:
+- story: 아메리카노 주문
+  steps:
+  - intent: order_coffee
+    entities:
+    - drink_type: 아메리카노
+    - quantity: 2
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 아메리카노 라지 주문
+  steps:
+  - intent: order_coffee
+    entities:
+    - drink_type: 아메리카노
+    - size: 라지
+    - quantity: 두
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 아이스 아메리카노 주문
+  steps:
+  - intent: order_coffee
+    entities:
+    - temperature: 아이스
+    - drink_type: 아메리카노
+    - quantity: 두
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 아이스 아메리카노 라지 주문
+  steps:
+  - intent: order_coffee
+    entities:
+    - temperature: 아이스
+    - drink_type: 아메리카노
+    - size: 라지
+    - quantity: 두
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 아메리카노 주문 + 옵션
+  steps:
+  - intent: order_coffee
+    entities:
+    - drink_type: 아메리카노
+    - quantity: 2
+    - additional_options: 샷
+    - add: 추가
+      role: order
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 아메리카노 라지 주문 + 옵션
+  steps:
+  - intent: order_coffee
+    entities:
+    - drink_type: 아메리카노
+    - size: 라지
+    - quantity: 두
+    - additional_options: 샷
+    - add: 추가
+      role: order
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 아이스 아메리카노 주문 + 옵션
+  steps:
+  - intent: order_coffee
+    entities:
+    - temperature: 아이스
+    - drink_type: 아메리카노
+    - quantity: 두
+    - additional_options: 샷
+    - add: 추가
+      role: order
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 아이스 아메리카노 라지 주문 + 옵션
+  steps:
+  - intent: order_coffee
+    entities:
+    - temperature: 아이스
+    - drink_type: 아메리카노
+    - size: 라지
+    - quantity: 두
+    - additional_options: 샷
+    - add: 추가
+      role: order
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경
+  steps:
+  - intent: modify_order
+    entities:
+      - drink_type: 아메리카노
+      - quantity: 한
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(온도)
+  steps:
+  - intent: modify_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - quantity: 한
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(사이즈)
+  steps:
+  - intent: modify_order
+    entities:
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(온도 및 사이즈)
+  steps:
+  - intent: modify_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경 + 옵션
+  steps:
+  - intent: modify_order
+    entities:
+      - drink_type: 아메리카노
+      - quantity: 한
+      - additional_options: 샷
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(온도) + 옵션
+  steps:
+  - intent: modify_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - quantity: 한
+      - additional_options: 샷
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(사이즈) + 옵션
+  steps:
+  - intent: modify_order
+    entities:
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(온도 및 사이즈) + 옵션
+  steps:
+  - intent: modify_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(대신|말고)
+  steps:
+  - intent: modify_order
+    entities:
+      - drink_type: 아메리카노
+      - quantity: 한
+      - change: 대신
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(대신|말고) + 온도
+  steps:
+  - intent: modify_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - quantity: 한
+      - change: 대신
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(대신|말고) + 사이즈
+  steps:
+  - intent: modify_order
+    entities:
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - change: 대신
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(대신|말고) + 온도,사이즈
+  steps:
+  - intent: modify_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - change: 대신
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(대신|말고) + 옵션
+  steps:
+  - intent: modify_order
+    entities:
+      - drink_type: 아메리카노
+      - quantity: 한
+      - additional_options: 샷
+      - change: 대신
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(대신|말고) + 온도 + 옵션
+  steps:
+  - intent: modify_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - quantity: 한
+      - additional_options: 샷
+      - change: 대신
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(대신|말고) + 사이즈 + 옵션
+  steps:
+  - intent: modify_order
+    entities:
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+      - change: 대신
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 변경(대신|말고) + 온도,사이즈 + 옵션
+  steps:
+  - intent: modify_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+      - change: 대신
+      - modify: 바꿔
+  - action: action_modify_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 후 취소
+  steps:
+  - intent: cancel_order
+  - action: action_cancel_order
+
+- story: 주문 제거
+  steps:
+  - intent: subtract_order
+    entities:
+      - drink_type: 아메리카노
+      - quantity: 한
+      - subtract: 빼
+  - action: action_subtract_from_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 제거(온도)
+  steps:
+  - intent: subtract_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - quantity: 한
+      - subtract: 빼
+  - action: action_subtract_from_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 제거(사이즈)
+  steps:
+  - intent: subtract_order
+    entities:
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - subtract: 빼
+  - action: action_subtract_from_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 제거(온도,사이즈)
+  steps:
+  - intent: subtract_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - subtract: 빼
+  - action: action_subtract_from_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 제거 + 옵션
+  steps:
+  - intent: subtract_order
+    entities:
+      - drink_type: 아메리카노
+      - quantity: 한
+      - additional_options: 샷
+        role: subtract_option
+      - subtract: 빼
+  - action: action_subtract_from_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 제거(온도) + 옵션
+  steps:
+  - intent: subtract_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - quantity: 한
+      - additional_options: 샷
+        role: subtract_option
+      - subtract: 빼
+  - action: action_subtract_from_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 제거(사이즈) + 옵션
+  steps:
+  - intent: subtract_order
+    entities:
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+        role: subtract_option
+      - subtract: 빼
+  - action: action_subtract_from_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 제거(온도,사이즈) + 옵션
+  steps:
+  - intent: subtract_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+        role: subtract_option
+      - subtract: 빼
+  - action: action_subtract_from_order
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 주문 확인 및 테이크아웃 확인
+  steps:
+  - intent: check_order
+  - action: action_order_finish
+  - intent: takeout_check
+    entities:
+      - take: 포장
+  - action: action_takeout
+
+- story: 주문 다중 처리
+  steps:
+  - intent: add_subtract_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+      - add: 추가
+      - temperature: 아이스
+      - drink_type: 카페라떼
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+      - subtract: 빼
+  - action: action_add_subtract
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 커피 추천
+  steps:
+  - intent: coffee_recommend_order
+  - action: action_coffee_recommendation
+
+- story: 커피 사이즈 변경(온도 O, 사이즈 O) + 옵션
+  steps:
+  - intent: order_coffee
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 두
+      - additional_options: 샷
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+  - intent: select_size_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 미디움
+      - quantity: 한
+      - additional_options: 샷
+      - size: 라지
+      - modify: 바꿔
+  - action: action_select_coffee_size
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 커피 온도 변경(온도 O, 사이즈 O) + 옵션
+  steps:
+  - intent: order_coffee
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 두
+      - additional_options: 샷
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+  - intent: select_temperature_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 한
+      - additional_options: 샷
+      - temperature: 아이스
+      - modify: 바꿔
+  - action: action_select_coffee_temperature
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 추가 옵션 제거(온도O, 사이즈O)
+  steps:
+  - intent: order_coffee
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 두
+      - additional_options: 샷
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+  - intent: additional_options_subtract_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - additional_options: 샷
+      - add: 추가
+      - quantity: 한
+      - additional_options: 샷
+      - subtract: 빼
+  - action: action_remove_additional_option
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 추가 옵션 제거(온도O, 사이즈X)
+  steps:
+  - intent: order_coffee
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - quantity: 두
+      - additional_options: 샷
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+  - intent: additional_options_subtract_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - additional_options: 샷
+      - add: 추가
+      - quantity: 한
+      - additional_options: 샷
+      - subtract: 빼
+  - action: action_remove_additional_option
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 추가 옵션 추가(온도O, 사이즈O)
+  steps:
+  - intent: order_coffee
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - quantity: 두
+      - additional_options: 샷
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+  - intent: additional_options_add_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - size: 라지
+      - additional_options: 샷
+      - add: 추가
+      - quantity: 한
+      - additional_options: 샷
+      - add: 추가
+        role: modify_option
+  - action: action_add_additional_option
+  - intent: middle_check
+  - action: utter_ask_question
+
+- story: 추가 옵션 추가(온도O, 사이즈X)
+  steps:
+  - intent: order_coffee
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - quantity: 두
+      - additional_options: 샷
+  - action: action_order_confirmation
+  - intent: middle_check
+  - action: utter_ask_question
+  - intent: additional_options_add_order
+    entities:
+      - temperature: 아이스
+      - drink_type: 아메리카노
+      - additional_options: 샷
+      - add: 추가
+      - quantity: 한
+      - additional_options: 샷
+      - add: 추가
+        role: modify_option
+  - action: action_add_additional_option
+  - intent: middle_check
+  - action: utter_ask_question

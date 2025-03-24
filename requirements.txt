@@ -1,0 +1,25 @@
+# Core Rasa
+rasa==3.6.20
+rasa-sdk==3.6.2
+
+# NLP Processing
+spacy==3.7.6
+stanza==1.9.2
+
+# Deep Learning
+tensorflow==2.12.0
+transformers==4.44.2
+torch==2.4.0
+
+# Database
+sqlite3
+
+# ML & Utils
+numpy==1.23.5
+regex==2022.10.31
+python-dateutil==2.8.2
+typing-extensions==4.12.2
+pyyaml==6.0.2
+
+# Logging
+logging

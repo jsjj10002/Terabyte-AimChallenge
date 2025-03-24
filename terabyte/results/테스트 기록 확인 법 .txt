@@ -1,0 +1,38 @@
+#Intent 평가 결과 확인
+{
+  "accuracy": 1.0,
+  "macro avg": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 1213
+  },
+  "weighted avg": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 1213
+  }
+}
+위의 예제는 intent_report.json 파일에서 추출한 결과입니다. 이 파일은 인텐트 분류의 정확도와 각 인텐트에 대한 평가 지표를 포함합니다.
+
+#Entity 평가 결과 확인
+{
+  "precision": 0.85,
+  "recall": 0.82,
+  "f1-score": 0.83,
+  "support": 2000
+}
+위의 예제는 DIETClassifier_report.json 파일에서 추출한 결과입니다. 이 파일은 엔티티 추출의 평가 지표를 포함합니다.
+
+#Confusion Matrix (혼동 행렬) 확인
+Rasa는 또한 혼동 행렬을 생성하여 모델이 어느 정도 잘못 예측했는지를 시각적으로 보여줍니다. 이는 confusion_matrix.png 파일로 저장됩니다.
+
+#잘못된 예측 확인
+DIETClassifier_errors.json 및 RegexEntityExtractor_errors.json 파일은 모델이 잘못 예측한 엔티티 예측 오류를 포함합니다. 이를 통해 모델의 약점을 파악하고 데이터를 수정하거나 모델을 개선할 수 있습니다.
+
+
+Accuracy (정확도): 전체 예측 중 올바른 예측의 비율
+Precision (정밀도): 모델이 특정 클래스로 예측한 것 중 실제로 해당 클래스인 비율
+Recall (재현율): 실제 클래스 중 모델이 올바르게 예측한 비율
+F1-score: 정밀도와 재현율의 조화 평균

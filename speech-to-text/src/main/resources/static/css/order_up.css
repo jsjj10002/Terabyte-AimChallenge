@@ -1,0 +1,239 @@
+/* 주문 확인 모달창 */
+
+/* 모달 배경 */
+.modal_bg {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+/* 주문 모달 */
+.modal_order {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  background-color: #fff;
+  z-index: 9999;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.modal_order > div {
+  width: 100%;
+}
+
+.modal_order_tit {
+  height: 8%;
+  text-align: center;
+  font-size: 35px;
+}
+
+.modal_order_tit > p {
+  line-height: 120px;
+  font-weight: bolder;
+}
+
+/* 주문 내역 */
+.modal_order_list {
+  height: 74%;
+  overflow-y: auto;
+}
+
+/* 리스트 타이틀 */
+.modal_order_list_tit {
+  width: 100%;
+}
+
+.modal_order_list_tit > li {
+  height: 70px;
+  background-color: #F6F6F6;
+  float: left;
+  font-size: 28px;
+  line-height: 70px;
+  font-weight: bold;
+  color: #474747;
+}
+
+.modal_order_list_tit > li:first-child {
+  width: 50%;
+  padding: 0 0 0 50px;
+}
+
+.modal_order_list_tit > li:nth-child(2) {
+  width: 25%;
+  text-align: center;
+}
+
+.modal_order_list_tit > li:nth-child(3) {
+  width: 25%;
+  text-align: center;
+}
+
+/* 리스트 내용 */
+.modal_order_list_menu {
+  width: 100%;
+}
+
+.modal_order_list_menu > li {
+  height: 60px;
+  background-color: #FFFAE8;
+  float: left;
+  font-weight: bold;
+  color: #474747;
+  font-size: 26px;
+  line-height: 60px;
+  border-top: 1px solid #D1CDCD;
+  border-bottom: 1px solid #D1CDCD;
+}
+
+.modal_order_list_menu > li:first-child {
+  width: 8%;
+  text-align: right;
+}
+
+.modal_order_list_menu > li:nth-child(2) {
+  width: 52%;
+  padding: 0 0 0 10px;
+}
+
+.modal_order_list_menu > li:nth-child(3) {
+  width: 20%;
+}
+
+.modal_order_list_menu > li:nth-child(4) {
+  width: 20%;
+}
+
+
+/* 리스트 옵션 */
+.modal_order_list_option {
+  width: 100%;
+}
+
+.modal_order_list_option > li {
+  float: left;
+  height: 60px;
+  font-size: 24px;
+  line-height: 60px;
+  font-weight: 600;
+  color: #828282;
+}
+
+.modal_order_list_option > li:first-child {
+  width: 12%;
+  text-align: right;
+  padding: 0 10px 0 0;
+}
+
+.modal_order_list_option > li:nth-child(2) {
+  width: 48%;
+}
+
+.modal_order_list_option > li:nth-child(3) {
+  width: 20%;
+}
+
+.modal_order_list_option > li:nth-child(4) {
+  width: 20%;
+}
+
+
+/* 주문 금액 */
+.modal_order_money {
+  height: 8%;
+  padding: 10px;
+}
+
+.modal_order_money > ul {
+  height: 100%;
+  background-color: #FFFAE8;
+  border: 3px solid #FFC700;
+  margin: 0 auto;
+}
+
+.modal_order_money > ul > li {
+  font-size: 30px;
+  font-weight: bold;
+  color: #474747;
+  float: left;
+  line-height: 90px;
+}
+
+.modal_order_money > ul > li:first-child {
+  width: 40%;
+  padding: 0 0 0 30px;
+}
+
+.modal_order_money > ul > li:nth-child(2) {
+  width: 30%;
+  text-align: center;
+}
+
+.modal_order_money > ul > li:nth-child(3) {
+  width: 30%;
+  text-align: right;
+  padding: 0 30px 0 0;
+}
+
+.modal_order_money span {
+  color: #000;
+}
+
+
+/* 버튼 영역 */
+.modal_order_button {
+  height: 10%;
+  background-color: #666;
+}
+
+button {
+  border: none;
+}
+
+.modal_order_button span {
+  font-size: 34px;
+}
+
+/* 이전으로 */
+.button_back {
+  width: 40%;
+  height: 100%;
+  background-color: #000;
+  float:left;
+}
+
+.button_back > span {
+  color: #fff;
+  font-weight: bolder;
+}
+
+
+/* 결제하기 */
+.button_pay {
+  width: 60%;
+  height: 100%;
+  background-color: #FFC700;
+}
+
+.button_pay > div {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.button_pay > div > img {
+  width: 70px;
+  height: auto;
+  float: left;
+}
+
+.button_pay > div > span {
+  color: #000000;
+  font-weight: bolder;
+  line-height: 50px;
+}
